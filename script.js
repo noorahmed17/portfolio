@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
   const nextBtn = document.querySelector(".next-btn");
   const prevBtn = document.querySelector(".prev-btn");
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
   let currentIndex = 0;
 
   function showSlide(index) {
@@ -10,15 +11,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function handleMediaChange(e) {
+    const el = document.querySelector(".nav-bar h3");
+    if (e.matches) {
+      el.innerHTML = "NA";
+      el.style.color = "#03045e";
+    } else {
+      el.innerHTML = "Nour Ahmed";
+    }
+  }
+
   showSlide(currentIndex);
 
   nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
+    currentIndex++;
+    if (currentIndex >= 0 && currentIndex < slides.length)
+      showSlide(currentIndex);
+    else {
+      currentIndex = 0;
+      showSlide(currentIndex);
+    }
+    // currentIndex = (currentIndex + 1) % slides.length;
+    // showSlide(currentIndex);
   });
 
   prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    currentIndex--;
+    if (currentIndex < 0) currentIndex = slides.length - 1;
     showSlide(currentIndex);
+    // currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    // showSlide(currentIndex);
   });
+  handleMediaChange(mediaQuery);
+  mediaQuery.addEventListener("change", handleMediaChange);
 });
