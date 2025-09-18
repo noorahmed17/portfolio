@@ -102,10 +102,16 @@ a {
   width: 80%;
 }
 
-.about-me-box {
+.about-me-box .tab-headlines {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.about-me-box .head-line {
+  margin-bottom: -20px;
 }
 
 .about-me-box h2 {
@@ -116,6 +122,14 @@ a {
   color: var(--font-color);
   padding: 12px;
   list-style-type: circle;
+}
+
+.about-me-box .body-content {
+  display: none;
+}
+
+.about-me-box .body-content.active {
+  display: block;
 }
 
 .experience span {
@@ -129,7 +143,8 @@ a {
 }
 
 .education .no-space {
-  display: table-header-group;
+  margin: 0;
+  /* display: table-header-group; */
 }
 
 .wrapper {
@@ -304,10 +319,24 @@ form button {
   }
 
   .about-me-box {
+    /* display: flex; */
     font-size: 12px;
-    grid-template-columns: 1fr;
+    /* width: 100%; */
+    /* flex-direction: row; */
+    /* overflow: hidden; */
+    /* grid-template-columns: 1fr;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.5rem; */
+  }
+
+  .about-me-box .head-line {
+    display: flex;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .about-me-box .body-content {
+    visibility: hidden;
   }
 
   .about-me-box h2 {

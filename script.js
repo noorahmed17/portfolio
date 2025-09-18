@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".next-btn");
   const prevBtn = document.querySelector(".prev-btn");
   const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+  const headLine = document.querySelectorAll(".head-line");
+
   let currentIndex = 0;
 
   function showSlide(index) {
@@ -31,16 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
       currentIndex = 0;
       showSlide(currentIndex);
     }
-    // currentIndex = (currentIndex + 1) % slides.length;
-    // showSlide(currentIndex);
   });
 
   prevBtn.addEventListener("click", () => {
     currentIndex--;
     if (currentIndex < 0) currentIndex = slides.length - 1;
     showSlide(currentIndex);
-    // currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    // showSlide(currentIndex);
   });
   handleMediaChange(mediaQuery);
   mediaQuery.addEventListener("change", handleMediaChange);
