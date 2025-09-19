@@ -102,16 +102,26 @@ a {
   width: 80%;
 }
 
+.about-me-box {
+  perspective: 1000px;
+}
+
 .about-me-box .tab-headlines {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5rem;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .about-me-box .head-line {
   margin-bottom: -20px;
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
+}
+
+.about-me-box .head-line:hover {
+  transform: translateZ(20px);
 }
 
 .about-me-box h2 {
@@ -126,6 +136,7 @@ a {
 
 .about-me-box .body-content {
   display: none;
+  height: 150px;
 }
 
 .about-me-box .body-content.active {
@@ -144,7 +155,6 @@ a {
 
 .education .no-space {
   margin: 0;
-  /* display: table-header-group; */
 }
 
 .wrapper {
@@ -319,17 +329,14 @@ form button {
   }
 
   .about-me-box {
-    /* display: flex; */
     font-size: 12px;
-    /* width: 100%; */
-    /* flex-direction: row; */
-    /* overflow: hidden; */
-    /* grid-template-columns: 1fr;
-    align-items: center;
-    gap: 1.5rem; */
   }
 
-  .about-me-box .head-line {
+  .about-me-box .tab-headlines {
+    gap: 1.5rem;
+    margin-bottom: 20px;
+  }
+  /* .about-me-box .head-line {
     display: flex;
     cursor: pointer;
     transition: opacity 0.3s ease;
@@ -337,7 +344,7 @@ form button {
 
   .about-me-box .body-content {
     visibility: hidden;
-  }
+  } */
 
   .about-me-box h2 {
     margin-bottom: 0;

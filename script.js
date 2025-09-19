@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".prev-btn");
   const mediaQuery = window.matchMedia("(max-width: 768px)");
 
-  const headLine = document.querySelectorAll(".head-line");
+  const headLines = document.querySelectorAll(".head-line");
+  const bodyContents = document.querySelectorAll(".body-content");
+  console.log(headLines);
 
   let currentIndex = 0;
 
@@ -25,6 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   showSlide(currentIndex);
+
+  headLines.forEach((headLine) => {
+    headLine.addEventListener("click", (e) => {
+      let clikedEl = e.currentTarget;
+      let dataTarget = clikedEl.dataset.target;
+
+      // clikedEl.classList.toggle("active");
+      bodyContents.forEach((bodyContent) => {
+        if (bodyContent.className.includes(dataTarget)) {
+          bodyContent.classList.add("active");
+        } else {
+          bodyContent.classList.remove("active");
+        }
+      });
+      // console.log(currHeadLineClass);
+    });
+  });
 
   nextBtn.addEventListener("click", () => {
     currentIndex++;
