@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".next-btn");
   const prevBtn = document.querySelector(".prev-btn");
   const mediaQuery = window.matchMedia("(max-width: 768px)");
-
   const headLines = document.querySelectorAll(".head-line");
-  const bodyContents = document.querySelectorAll(".body-content");
-  console.log(headLines);
-
+  const boxContents = document.querySelectorAll(".inner-box-content");
   let currentIndex = 0;
+
+  showSlide(currentIndex);
+  handleMediaChange(mediaQuery);
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -26,22 +26,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  showSlide(currentIndex);
+  boxContents.forEach((content) => {
+    if (content.classList.contains("active")) {
+      requestAnimationFrame(() => content.classList.add("visible"));
+    }
+  });
 
   headLines.forEach((headLine) => {
-    headLine.addEventListener("click", (e) => {
-      let clikedEl = e.currentTarget;
-      let dataTarget = clikedEl.dataset.target;
+    headLine.addEventListener("click", () => {
+      let target = document.querySelector(`.${headLine.dataset.target}`);
+      if (!target || target.classList.contains("active")) return;
 
-      // clikedEl.classList.toggle("active");
-      bodyContents.forEach((bodyContent) => {
-        if (bodyContent.className.includes(dataTarget)) {
-          bodyContent.classList.add("active");
-        } else {
-          bodyContent.classList.remove("active");
+      boxContents.forEach((c) => {
+        if (c === target) return;
+        if (c.classList.contains("visible") || c.classList.contains("active")) {
+          c.classList.remove("visible");
+          c.classList.remove("active");
         }
       });
-      // console.log(currHeadLineClass);
+      target.classList.add("active");
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => target.classList.add("visible"));
+      });
     });
   });
 
@@ -60,6 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentIndex < 0) currentIndex = slides.length - 1;
     showSlide(currentIndex);
   });
-  handleMediaChange(mediaQuery);
+
   mediaQuery.addEventListener("change", handleMediaChange);
 });
