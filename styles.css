@@ -334,6 +334,7 @@ form button {
   .nav-bar {
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-around;
     padding: 0.1rem;
     height: 5%;
     width: 100%;
@@ -365,7 +366,7 @@ form button {
   }
 
   #home img {
-    width: 80%;
+    width: 76%;
     height: auto;
     margin: 0 auto;
   }
@@ -408,6 +409,7 @@ form button {
   .about-me-box .tab-headlines {
     gap: 1.5rem;
     margin-bottom: 20px;
+    font-size: 15px;
   }
 
   .box-content {
