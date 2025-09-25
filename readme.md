@@ -5,7 +5,7 @@ This project showcases my skills, experience, and projects in a clean, modern, a
 
 ## 🚀 Demo
 
-You can view the live version here: **[Live Portfolio](https://your-portfolio-link.com)**
+You can view the live version here: **[Live Portfolio](https://portf-oli-o.netlify.app/)**
 
 ![Portfolio Preview](./public/127.0.0.1_5500_index.html.png)
 
