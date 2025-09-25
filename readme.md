@@ -1,45 +1,41 @@
-# Nour Ahmed – Portfolio Website
+# 🌐 My Portfolio Website
 
-This is my personal portfolio website to showcase my skills, experience, and projects as a Full-Stack Developer.
+Welcome to my **personal portfolio website**!  
+This project showcases my skills, experience, and projects in a clean, modern, and interactive way.
 
-## 🔗 Live Demo
+## 🚀 Demo
 
-Not Yet
+You can view the live version here: **[Live Portfolio](https://your-portfolio-link.com)**
 
----
-
-## 🚀 Features
-
-- **Home Section** – Introduction, image, and resume download button.
-- **About Section** – Detailed information about skills, experience, and education.
-- **Work Section** – A sliding carousel of selected projects.
-- **Contact Section** – Email and WhatsApp buttons, plus a working contact form (powered by Formspree).
-- **Sticky Navigation Bar** – Includes social media links (LinkedIn, GitHub, Facebook).
-- **Responsive Design** – Looks great on desktop and mobile devices.
-- **Font Awesome Integration** – For icons.
+![Portfolio Preview](./public/127.0.0.1_5500_index.html.png)
 
 ---
 
-## 🛠️ Technologies Used
+## 📋 Features
 
-- HTML5
-- CSS3
-- JavaScript
-- Font Awesome
-- Formspree (for handling contact form submissions)
-
----
-
-## 📬 Contact
-
-- **Email**: [noorshalbi@gmail.com](mailto:noorshalbi@gmail.com)
-- **WhatsApp**: [+201060099827](https://wa.me/201060099827)
-- **LinkedIn**: [https://www.linkedin.com/in/nour-ahmed-88a57021b/](https://www.linkedin.com/in/nour-ahmed-88a57021b/)
-- **GitHub**: [https://github.com/noorahmed17](https://github.com/noorahmed17)
-- **Facebook**: [https://www.facebook.com/noor.ahmed.995934](https://www.facebook.com/noor.ahmed.995934)
+- **Responsive Design** – Fully optimized for desktop, tablet, and mobile.
+- **Tabbed Sections** – Smooth transitions between **Skills**, **Experience**, and **Education**.
+- **Interactive Dropdowns** – Expandable details under experience items for a cleaner UI.
+- **Modern Styling** – Built with CSS variables, custom shadows, and subtle animations.
+- **Accessible & Semantic HTML** – Clean structure for SEO and accessibility.
 
 ---
 
-## 📄 License
+## 🛠️ Built With
 
-This project is for educational and personal use. Feel free to get in touch if you'd like to reuse or collaborate.
+- **HTML5** – Semantic structure
+- **CSS3** – Custom variables, transitions, and flexbox layout
+- **JavaScript (ES6)** – Tab switching, dropdown toggling, and animations
+
+---
+
+## 📂 Project Structure
+
+```bash
+.
+├── index.html        # Main HTML file
+├── styles.css        # Global styles and theme variables
+├── script.js         # JavaScript for interactions (tabs, dropdowns)
+├── public/           # Images, icons, and other resources
+└── README.md         # You are here!
+```

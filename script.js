@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mediaQuery = window.matchMedia("(max-width: 768px)");
   const headLines = document.querySelectorAll(".head-line");
   const boxContents = document.querySelectorAll(".inner-box-content");
+  const dropDown = document.querySelectorAll(".has-drop-down");
   let currentIndex = 0;
 
   showSlide(currentIndex);
@@ -51,6 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  dropDown.forEach((li) => {
+    li.addEventListener("click", () => {
+      li.classList.toggle("open");
+    });
+  });
+
   nextBtn.addEventListener("click", () => {
     currentIndex++;
     if (currentIndex >= 0 && currentIndex < slides.length)
@@ -65,6 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex--;
     if (currentIndex < 0) currentIndex = slides.length - 1;
     showSlide(currentIndex);
+  });
+
+  window.addEventListener("load", () => {
+    dropDown.forEach((li) => {
+      li.classList.remove("open");
+    });
   });
 
   mediaQuery.addEventListener("change", handleMediaChange);

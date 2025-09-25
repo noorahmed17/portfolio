@@ -176,7 +176,7 @@ a {
 
 .about-me-box ul li {
   background-color: var(--light-yellow);
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   list-style-position: inside;
   padding: 10px 15px;
   border-radius: 7px;
@@ -303,6 +303,33 @@ form button {
   height: 50px;
 }
 
+.drop-down {
+  background-color: var(--light-yellow);
+  margin: 6px 0 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px var(--dark-brown);
+  font-size: 13px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.has-drop-down {
+  position: relative;
+}
+
+.has-drop-down.open + .drop-down {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   .nav-bar {
     flex-direction: row;
@@ -374,8 +401,8 @@ form button {
     width: 95%;
   }
 
-  .about-me-box {
-    font-size: 12px;
+  .about-me-box .drop-down {
+    font-size: 10px;
   }
 
   .about-me-box .tab-headlines {
@@ -386,7 +413,7 @@ form button {
   .box-content {
     padding: 15px;
     /* margin-top: 40px; */
-    width: 93%;
+    width: 92%;
   }
 
   .inner-box-content {
