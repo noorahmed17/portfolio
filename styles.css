@@ -365,17 +365,17 @@ form button {
   }
 
   #home img {
-    width: 70%;
+    width: 80%;
     height: auto;
     margin: 0 auto;
   }
 
   .job-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .my-info h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .reside {
@@ -412,14 +412,12 @@ form button {
 
   .box-content {
     padding: 15px;
-    /* margin-top: 40px; */
     width: 92%;
   }
 
   .inner-box-content {
     padding: 10px;
     font-size: 12px;
-    /* width: 75%; */
   }
 
   .about-me-box ul {
