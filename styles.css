@@ -337,7 +337,6 @@ form button {
     justify-content: space-around;
     padding: 0.1rem;
     height: 5%;
-    width: 100%;
   }
 
   .nav-bar h3 {
@@ -366,7 +365,7 @@ form button {
   }
 
   #home img {
-    width: 76%;
+    width: 75%;
     height: auto;
     margin: 0 auto;
   }
@@ -409,7 +408,7 @@ form button {
   .about-me-box .tab-headlines {
     gap: 1.5rem;
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .box-content {
@@ -458,4 +457,9 @@ form button {
     font-size: 12px;
     text-align: center;
   }
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
